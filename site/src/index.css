@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Rustic Bar Color Palette */
+    --background: 30 15% 8%;
+    --foreground: 45 25% 95%;
+
+    --card: 25 20% 12%;
+    --card-foreground: 45 25% 95%;
+
+    --popover: 25 20% 10%;
+    --popover-foreground: 45 25% 95%;
+
+    --primary: 40 65% 55%;
+    --primary-foreground: 30 15% 8%;
+
+    --secondary: 30 20% 18%;
+    --secondary-foreground: 45 25% 95%;
+
+    --muted: 30 15% 15%;
+    --muted-foreground: 45 15% 65%;
+
+    --accent: 45 75% 60%;
+    --accent-foreground: 30 15% 8%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 45 25% 95%;
+
+    --border: 30 15% 20%;
+    --input: 30 15% 20%;
+    --ring: 40 65% 55%;
+
+    --radius: 0.5rem;
+
+    /* Custom rustic colors */
+    --wood-dark: 25 30% 15%;
+    --wood-medium: 30 25% 25%;
+    --gold-warm: 40 65% 55%;
+    --gold-light: 45 75% 70%;
+    
+    /* Gradients */
+    --gradient-warm: linear-gradient(135deg, hsl(30 25% 15%), hsl(25 30% 10%));
+    --gradient-gold: linear-gradient(135deg, hsl(40 65% 55%), hsl(45 75% 60%));
+    
+    /* Shadows */
+    --shadow-warm: 0 10px 40px -10px hsl(40 65% 35% / 0.4);
+    --shadow-glow: 0 0 30px hsl(40 65% 55% / 0.3);
+    
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--background));
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--wood-medium));
+    border-radius: 5px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--gold-warm));
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
